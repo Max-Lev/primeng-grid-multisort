@@ -1,0 +1,45 @@
+<p-table 
+appMultiSort 
+[dataSource]="employees" 
+[columns]="columns" 
+[value]="employees" [columns]="columns">
+  <ng-template pTemplate="header">
+    <tr>
+      <th  *ngFor="let column of columns">
+        {{column.header}}
+      </th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr>
+      <td *ngFor="let col of columns">
+        {{rowData[col.field]}}
+      </td>
+    </tr>
+  </ng-template>
+
+</p-table>
+
+
+
+
+  <!-- <button pButton (click)="switchTemplate()" type="button" label="Click"></button>
+
+<ng-container *ngTemplateOutlet="employeesTemp; context:contextManager"></ng-container>
+  
+  <ng-template #employeesTemp let-itemsContext>
+    <table>
+  
+      <ng-container *ngFor="let col of columns;let ii=index">
+        <tr>
+          <ng-container *ngFor="let item of itemsContext;let i=index">
+            <td>
+              {{item[col.field]}}
+            </td>
+          </ng-container>
+        </tr>
+      </ng-container>
+  
+    </table>
+  </ng-template> -->
